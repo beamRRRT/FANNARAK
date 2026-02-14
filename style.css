@@ -1,0 +1,185 @@
+/* ตั้งค่าพื้นฐานและฟอนต์ */
+:root {
+    --primary-pink: #ffb7c5;
+    --dark-pink: #ff8fa3;
+    --bg-color: #fff0f3;
+    --text-color: #5c3a41;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mali', cursive; /* ฟอนต์ลายมือน่ารัก */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- ส่วนหน้า Intro (ซองจดหมาย) --- */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 1s ease;
+}
+
+.envelope-container {
+    cursor: pointer;
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+.envelope {
+    width: 150px;
+    height: 100px;
+    background: var(--dark-pink);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ทำรอยพับซองจดหมายด้วย CSS */
+.envelope::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 60px solid #ffccd5; /* สีฝาซอง */
+}
+
+.heart-seal {
+    font-size: 40px;
+    z-index: 2;
+    margin-top: -20px;
+}
+
+.tap-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+/* --- ส่วนเนื้อหาหลัก --- */
+#main-content {
+    width: 90%;
+    max-width: 500px; /* ขนาดพอดี iPad/มือถือ */
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(255, 183, 197, 0.4);
+    border: 3px solid #fff;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--dark-pink);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Gallery รูปภาพ */
+.photo-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.photo {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--primary-pink);
+    transform: rotate(-5deg);
+    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.photo:nth-child(2) {
+    transform: rotate(5deg);
+}
+
+.photo:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+.message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    background-color: #fff5f7;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.flower-decoration {
+    font-size: 2rem;
+    margin-top: 20px;
+    letter-spacing: 10px;
+}
+
+/* --- Animations --- */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ดอกไม้ร่วง */
+.petal {
+    position: fixed;
+    top: -10%;
+    z-index: 0;
+    animation: fall linear forwards;
+    pointer-events: none; /* กดทะลุได้ */
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* Media Query สำหรับ iPad (หน้าจอใหญ่ขึ้น) */
+@media (min-width: 768px) {
+    .photo {
+        width: 180px;
+        height: 180px;
+    }
+    h1 { font-size: 3rem; }
+    .message { font-size: 1.3rem; }
+}
