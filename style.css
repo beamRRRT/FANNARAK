@@ -93,7 +93,8 @@ body{
   align-self:center;
 }
 
-.music-btn{
+.music-btn,
+.preview-btn{
   position:fixed;
   top:20px;
 
@@ -119,7 +120,12 @@ body{
   right:20px;
 }
 
-.music-btn:hover{
+.preview-btn{
+  right:80px;
+}
+
+.music-btn:hover,
+.preview-btn:hover{
   background:rgba(255,107,157,0.3);
   transform:scale(1.1);
 }

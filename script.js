@@ -93,6 +93,25 @@ function showBirthdayPage(){
   audioPlayer.play();
 }
 
+function togglePreview(){
+  const countdownPage = document.getElementById('countdown-page');
+  const birthdayPage = document.getElementById('birthday-page');
+  const previewBtn = document.getElementById('previewBtn');
+  
+  if(countdownPage.classList.contains('hidden')){
+    // Show countdown
+    countdownPage.classList.remove('hidden');
+    birthdayPage.classList.add('hidden');
+    previewBtn.textContent = '👀';
+  } else {
+    // Show birthday preview
+    countdownPage.classList.add('hidden');
+    birthdayPage.classList.remove('hidden');
+    previewBtn.textContent = '⏰';
+    loadPhotos();
+  }
+}
+
 /* =========================
    PHOTOS
 ========================= */
@@ -406,6 +425,16 @@ musicBtn.addEventListener(
       audioPlayer.pause();
     }
   }
+);
+
+const previewBtn =
+  document.getElementById(
+    'previewBtn'
+  );
+
+previewBtn.addEventListener(
+  'click',
+  togglePreview
 );
 
 /* =========================
