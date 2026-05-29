@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday นะครับที่รัก 💖</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400&family=Sarabun:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-gradient"></div>
+
+<canvas id="starsCanvas"></canvas>
+
+<div class="particle-container" id="particles"></div>
+
+<button class="music-btn" id="musicBtn">
+  🎵
+</button>
+
+<audio id="audioPlayer"></audio>
+
+<!-- COUNTDOWN -->
+<div class="page" id="countdown-page">
+
+  <p class="countdown-label">
+    ✨ กำลังรอช่วงเวลาวันพิเศษของอ้วนๆ ✨
+  </p>
+
+  <h1 class="countdown-title">
+    อีกไม่นาน…รอหน่อยน้าอ้วนๆ
+  </h1>
+
+  <p class="countdown-subtitle">    
+    เซอร์ไพรส์กำลังจะมาถึง...รออีกนิดน้าาาา 💖
+  </p>
+
+  <div class="countdown-grid">
+
+    <div class="countdown-box">
+      <span class="countdown-number" id="days">00</span>
+      <span class="countdown-unit">วัน</span>
+    </div>
+
+    <div class="countdown-divider">:</div>
+
+    <div class="countdown-box">
+      <span class="countdown-number" id="hours">00</span>
+      <span class="countdown-unit">ชั่วโมง</span>
+    </div>
+
+    <div class="countdown-divider">:</div>
+
+    <div class="countdown-box">
+      <span class="countdown-number" id="minutes">00</span>
+      <span class="countdown-unit">นาที</span>
+    </div>
+
+    <div class="countdown-divider">:</div>
+
+    <div class="countdown-box">
+      <span class="countdown-number" id="seconds">00</span>
+      <span class="countdown-unit">วินาที</span>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- BIRTHDAY -->
+<div class="page hidden" id="birthday-page">
+
+  <p class="bday-greeting">
+    ✨ วันพิเศษของหมูอ้วนน ✨
+  </p>
+
+  <h1 class="bday-title">
+    Happy Birthday Na T rak ❤️
+  </h1>
+
+  <span class="bday-emoji">
+    🎂💖
+  </span>
+
+  <div class="slideshow-container">
+
+    <div class="slideshow-inner" id="slideshowInner">
+
+      <div class="photo-placeholder" id="photoPlaceholder">
+        <div class="ph-icon">📸</div>
+        <div>ใส่รูปแฟนใน script.js</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bday-message-box">
+
+    <p class="bday-message-text">
+      วันนี้เป็นวันที่พิเศษของหมูอ้วนน ❤️<br><br>
+
+      ขอให้อ้วนนๆมีความสุขมากๆนะครับ และขอให้ทุกๆวันของอ้วนๆเต็มไปด้วยความสุขและรอยยิ้ม 😊<br><br>
+      และขอให้เรารักกันแบบนี้ไปนานๆ เค้ารักอ้วนๆที่สุดเลยนะครับ 💕
+    </p>
+
+  </div>
+
+  <button class="secret-btn" id="secretBtn">
+    💌 อ่านข้อความลับ
+  </button>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="secretModal">
+
+  <div class="modal-card">
+
+    <button class="modal-close" id="modalClose">
+      ✕
+    </button>
+
+    <h2 class="modal-title">
+      💌 ข้อความลับ
+    </h2>
+
+    <p class="modal-text" id="typingText"></p>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
